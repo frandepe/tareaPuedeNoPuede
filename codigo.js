@@ -17,6 +17,7 @@ const noPuedeComprar = document.getElementById("noPuedeComprar");
 const listaDePersonas = document.getElementById("listaDePersonas");
 const usuarioExistente = document.getElementById("usuarioExistente");
 
+//localStorage.setItem("unValor", "sarasa")
 
 agregarDatos.addEventListener("click", addNombreDNI);
 
@@ -57,7 +58,8 @@ identificarDNI.value = "";
 
 function pintarCodigo (algunArray) {
     listaDePersonas.innerHTML = `${algunArray.map((persona, index) => 
-        `<div class="card" key="${index}"><h3><u>Nombre</u>: ${persona.nombre}</h3><h3><u>DNI</u>: ${persona.dni}</h3><h3 style="color:#212529;">${persona.check}</h3></div>`).join("")}`;
+        `<div class="card" key="${index}"><h3><u>Nombre</u>: ${persona.nombre} - <u>DNI</u>: ${persona.dni}</h3><h3 style="color:#212529;">${persona.check}</h3></div>`).join("")}`;
+        //`<div class="card" key="${index}"><h3><u>Nombre</u>: ${persona.nombre}</h3><h3><u>DNI</u>: ${persona.dni}</h3><h3 style="color:#212529;">${persona.check}</h3></div>`).join("")}`
 }
 
 // function corroborarUsuario () {

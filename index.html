@@ -3,10 +3,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <div class="texto-navbar">
+                <div>
+                    <h4>Este proyecto esta construído con código JavaScript</h4>
+                </div>
+                <div>
+                    <h4>Sientete libre de curiosear el código <a href="https://github.com/frandepe/tareaPuedeNoPuede"><i class="fab fa-github"></i></a> :) </h4>
+                </div>
+            </div>
+        </nav>
+    </header>
 <div class="forms-contenedor">
     <form action="" id="">
         <div class="input-text">
@@ -22,13 +36,15 @@
         <div class="boton">
             <button id="agregarDatos" type="submit">Agregar</button>
         </div>
+        <p class="ya-existe" id="usuarioExistente"></p>
     </form>
 </div>
-   
-
-   <div id="listaDePersonas"></div>
-   <div id="usuarioExistente"></div>
- 
+<h3 class="titulo">Lista de personas que pueden comprar dólares:</h3>
+<div class="listas-contenedor">
+    <div>
+    <p id="listaDePersonas"></p>
+    </div>
+</div>
     
     <script src="codigo.js"></script>
 </body>
