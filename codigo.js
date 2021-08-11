@@ -29,55 +29,42 @@ const persona = {
     nombre: identificarNombre.value, 
     dni: identificarDNI.value,
 
-    check: checkearDolares()
+    check: puedeComprar.checked 
+    ? "Puede comprar dólares" 
+    : "No puede comprar dólares",
     
 
 };
 
-const nombreExistente = corroborarUsuario();
+//const nombreExistente = corroborarUsuario();
 
-if (nombreExistente){
-    usuarioExistente.innerHTML = `<div class="cardPoder"><h3>El usuario ${persona.nombre} con DNI ${persona.dni} ya existe</h3>`
+const personExist = arrayDeNombres.some((valor) => valor.dni === identificarDNI.value);
+
+if (personExist){
+    usuarioExistente.innerHTML = `<div class="cardPoder"><h3>El usuario con DNI ${persona.dni} ya existe</h3>`
 }
 else{
     arrayDeNombres.push(persona);
-    listaDePersonas.innerHTML = `${arrayDeNombres.map((persona, index) => 
-        `<div class="card" key="${index}"><h3><u>Nombre</u>: ${persona.nombre}</h3><h3><u>DNI</u>: ${persona.dni}</h3><h3 style="color:#212529;">${persona.check}</h3></div>`).join("")}`;
+    pintarCodigo (arrayDeNombres);
 }
 
 
-
-puedeComprar.checked = false;
-noPuedeComprar.checked = false;
 identificarNombre.value = "";
 identificarDNI.value = "";
 
 
 }
 
-function checkearDolares () {
-    
-    if (puedeComprar.checked === true) {
-    
-        return "Puede comprar dólares"
-    }
-    if (noPuedeComprar.checked === true) {
-        
-        return "No puede comprar dólares"
-
-    }
-
-    if (puedeComprar.checked === false && noPuedeComprar.checked === false) {
-        return ""
-    }
-
+function pintarCodigo (algunArray) {
+    listaDePersonas.innerHTML = `${algunArray.map((persona, index) => 
+        `<div class="card" key="${index}"><h3><u>Nombre</u>: ${persona.nombre}</h3><h3><u>DNI</u>: ${persona.dni}</h3><h3 style="color:#212529;">${persona.check}</h3></div>`).join("")}`;
 }
 
-function corroborarUsuario () {
+// function corroborarUsuario () {
 
-    const comprobar = arrayDeNombres.some((valor) => valor.nombre.toUpperCase() === identificarNombre.value.toUpperCase() && valor.dni === identificarDNI.value);
-        return comprobar;
+//     const comprobar = arrayDeNombres.some((valor) => valor.dni === identificarDNI.value);
+//         return comprobar;
        
-    }
+//     }
   
 

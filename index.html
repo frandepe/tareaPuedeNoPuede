@@ -11,10 +11,14 @@
     <form action="" id="">
         <div class="input-text">
             <input type="text" name="identificarNombre" placeholder="Nombre completo" id="identificarNombre"/>
-            <input type="text" name="identificarDNI" placeholder="DNI" id="identificarDNI"/></div>
+            <input type="number" name="identificarDNI" placeholder="DNI" id="identificarDNI"/>
+        </div>
         <div class="input-radio">
-            <input type="radio" name="estado" id="puedeComprar"> Puede
-            <input type="radio" name="estado" id="noPuedeComprar"> No puede</div>
+            <input type="radio" name="estado" id="puedeComprar" checked> 
+            <label for="puedeComprar">Puede</label>
+            <input type="radio" name="estado" id="noPuedeComprar">
+            <label for="noPuedeComprar">No puede</label>
+        </div>
         <div class="boton">
             <button id="agregarDatos" type="submit">Agregar</button>
         </div>
